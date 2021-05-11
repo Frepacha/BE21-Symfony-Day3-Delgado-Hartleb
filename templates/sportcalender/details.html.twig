@@ -1,6 +1,32 @@
 {% extends 'base.html.twig' %}
 
-
 {% block body %}
-details
+	<hr>
+	<div class="container d-flex shadow-lg w-100">
+		<h2 class="text text-center pt-5">Details Calender</h2>
+	</div>
+	<div class="container d-flex justify-content-center">
+		<div class="row">
+			<div class="col-sm-4 my-3">
+				<div class="card p-2" id="shadowCard" style="width: 18rem;">
+					<img src="/pictures/{{sport.picture}}" class="card-img-top" alt="{{sport.name}}">
+					<div class="card-body">
+						<h5 class="card-title">{{sport.name}}</h5>
+						<p class="card-text">{{sport.category}}</p>
+						<p class="card-text">{{sport.description}}</p>
+						<p class="card-text">{{sport.priority}}</p>
+					<p class="card-text">{{sport.fk_status.name}}</p>
+						<p class="card-text">{{sport.createDate|date('F j, Y, g:i a')}}.</p>
+						<p class="card-text">{{sport.dueDate|date('F j, Y, g:i a')}}.</p>
+
+
+						<a href="/" class="btn btn-success">Back to All</a>
+
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
 {% endblock %}
