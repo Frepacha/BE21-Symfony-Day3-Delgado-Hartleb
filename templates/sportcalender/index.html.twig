@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="stylehome.css">
+{% endblock %}
+
+{% block body %}
+	<div class="container d-flex shadow-lg w-100">
+		<h2 class="text text-center pt-5">All Sports Calender</h2>
+	</div>
+	<div class="container d-flex justify-content-center">
+		<div class="row">
+
+			{% for sport in sports %}
+				<div class="col-sm-4 my-3">
+					<div class="card p-2" id="shadowCard" style="width: 18rem;">
+						<img src="pictures/{{sport.picture}}" class="card-img-top" alt="{{sport.name}}">
+						<div class="card-body">
+							<h5 class="card-title">{{sport.name}}</h5>
+							<p class="card-text">{{sport.category}}.</p>
+							<p class="card-text">{{sport.dueDate|date('F j, Y, g:i a')}}.</p>
+
+
+							<a href="#" class="btn btn-success">View</a>
+							<a href="#" class="btn btn-primary">Edit</a>
+							<a href="#" class="btn btn-danger">Delete</a>
+						</div>
+					</div>
+				</div>
+
+			{% endfor %}
+
+		</div>
+	</div>
+{% endblock %}
